@@ -1,4 +1,3 @@
-
 version: "3.9"
 services:
   postgres:
@@ -18,6 +17,11 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+
+  redis:
+    image: redis:7
+    container_name: bd_redis
+    ports: ["6379:6379"]
 
   pgadmin:
     image: dpage/pgadmin4:8
@@ -40,17 +44,36 @@ services:
       postgres:
         condition: service_healthy
 
-  app:
-    build: ./app
-    container_name: bd_app
+  backend:
+    build: .
+    container_name: bd_backend
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000
+    volumes:
+      - .:/code
     environment:
       DATABASE_URL: postgresql+psycopg2://bduser:bdpass@postgres:5432/bd
-    ports: ["8501:8501"]
+      REDIS_URL: redis://redis:6379/0
     depends_on:
       postgres:
         condition: service_healthy
+      redis:
+        condition: service_started
+
+  frontend:
+    build: .
+    container_name: bd_frontend
+    command: streamlit run bd_app/app.py --server.port 8501 --server.address 0.0.0.0
     volumes:
-      - ./app:/app
+      - .:/code
+    ports: ["8501:8501"]
+    environment:
+      DATABASE_URL: postgresql+psycopg2://bduser:bdpass@postgres:5432/bd
+      REDIS_URL: redis://redis:6379/0
+    depends_on:
+      backend:
+        condition: service_started
+      postgres:
+        condition: service_healthy
 
 volumes:
   pgdata:
