@@ -1,0 +1,6 @@
+streamlit>=1.36
+sqlalchemy>=2.0
+psycopg2-binary>=2.9
+pandas>=2.2
+matplotlib>=3.8
+python-dotenv>=1.0

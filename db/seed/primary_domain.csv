@@ -1,0 +1,28 @@
+primary_domain_id,code,label
+1,iols,IOLs
+2,blindness,Blindness
+3,akantior,Akantior
+4,selected_products,Selected Products
+5,digital_health_care,Digital Health Care
+6,glaucoma,Glaucoma
+7,dry_eye,Dry eye
+8,retinopathies,Retinopathies
+9,nutraceuticals_postbiotics,Nutraceuticals & Postbiotics
+10,low_vision,Low vision
+11,eye_surface,Eye surface
+12,myopia,Myopia
+13,amblyopia,Amblyopia
+14,inflammation,Inflammation
+15,namesys,NaMESys
+16,digital_market_access,Digital Market Access
+17,allergy,Allergy
+18,neovascularization,Neovascularization
+19,consumer_eye_care,Consumer Eye Care
+20,presbyopia,Presbyopia
+21,infections,Infections
+22,platforms_technology,Platforms & Technology
+23,immunosuppressants,Immunosuppressants
+24,menthal_health,Menthal health
+25,infection_inflammation,Infection/Inflammation
+26,diagnostics,Diagnostics
+27,anaesthetics,Anaesthetics

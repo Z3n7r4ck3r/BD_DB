@@ -1,0 +1,11 @@
+\copy company(company_id,name)              FROM '/docker-entrypoint-initdb.d/seed/company.csv'              WITH (FORMAT csv, HEADER true, NULL '');
+\copy product_asset(product_asset_id,company_id,name) FROM '/docker-entrypoint-initdb.d/seed/product_asset.csv' WITH (FORMAT csv, HEADER true, NULL '');
+\copy outcome_sentiment(outcome_sentiment_id,code,label) FROM '/docker-entrypoint-initdb.d/seed/outcome_sentiment.csv' WITH (FORMAT csv, HEADER true, NULL '');
+\copy business_mode(business_mode_id,code,label) FROM '/docker-entrypoint-initdb.d/seed/business_mode.csv' WITH (FORMAT csv, HEADER true, NULL '');
+\copy primary_domain(primary_domain_id,code,label) FROM '/docker-entrypoint-initdb.d/seed/primary_domain.csv' WITH (FORMAT csv, HEADER true, NULL '');
+\copy strategic_bucket(strategic_bucket_id,code,label) FROM '/docker-entrypoint-initdb.d/seed/strategic_bucket.csv' WITH (FORMAT csv, HEADER true, NULL '');
+\copy application_domain(application_domain_id,code,label) FROM '/docker-entrypoint-initdb.d/seed/application_domain.csv' WITH (FORMAT csv, HEADER true, NULL '');
+\copy status_lu(status_id,code,label)      FROM '/docker-entrypoint-initdb.d/seed/status_lu.csv'             WITH (FORMAT csv, HEADER true, NULL '');
+\copy record(record_id,company_id,product_asset_id,outcome_sentiment_id,business_mode_id,primary_domain_id,strategic_bucket_id,application_domain_id,status_id,notes) FROM '/docker-entrypoint-initdb.d/seed/record.csv' WITH (FORMAT csv, HEADER true, NULL '');
+\copy business_review_session(brs_id,year,quarter,session_date,report_path) FROM '/docker-entrypoint-initdb.d/seed/business_review_session.csv' WITH (FORMAT csv, HEADER true, NULL '');
+\copy touchpoint(touchpoint_id,record_id,brs_id,tp_type,tp_ref,notes) FROM '/docker-entrypoint-initdb.d/seed/touchpoint.csv' WITH (FORMAT csv, HEADER true, NULL '');

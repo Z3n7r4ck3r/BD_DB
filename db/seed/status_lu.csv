@@ -1,0 +1,15 @@
+status_id,code,label
+1,re_engage,Re-engage
+2,on_hold,On hold
+3,strategic_pass,Strategic pass
+4,declined,Declined
+5,not_a_strategic_fit,Not a strategic fit
+6,active,Active
+7,not_pursued,Not pursued
+8,finalized,Finalized
+9,stalled,Stalled
+10,unresponsive,Unresponsive
+11,awaiting_decision,Awaiting decision
+12,unsuccessful,Unsuccessful
+13,concluded,Concluded
+14,withdrawn,Withdrawn

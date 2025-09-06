@@ -1,0 +1,4 @@
+outcome_sentiment_id,code,label
+1,positive,Positive
+2,neutral,Neutral
+3,negative,Negative
